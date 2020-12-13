@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "admin" middleware group. Now create something great!
 |
 */
+Route::namespace('Auth')->group(function() {
+    Route::middleware('guest:admin')->group(function() {
+        // Route::get('/login', 'LoginController@index')->name('login');
+        // Route::post('/login', 'LoginController@login')->name('login');
+        // Route::post('/login/get-serial-number', 'SerialController@index');
+    });
+});
 
 Route::get('/', function () {
     return view('admin.dashboard.index');
