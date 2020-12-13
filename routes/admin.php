@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 Route::namespace('Auth')->group(function() {
     Route::middleware('guest:admin')->group(function() {
-        // Route::get('/login', 'LoginController@index')->name('login');
-        // Route::post('/login', 'LoginController@login')->name('login');
-        // Route::post('/login/get-serial-number', 'SerialController@index');
+        Route::get('/login', [LoginController::class, 'index'])->name('login');
+        Route::post('/login', [LoginController::class, 'login'])->name('login');
     });
 });
 
-Route::get('/', function () {
-    return view('admin.dashboard.index');
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.dashboard.index');
+    })->name('index');
 });
