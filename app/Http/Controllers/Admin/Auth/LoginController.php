@@ -9,6 +9,6 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return 'ini halaman login admins';
+        return view('admin.auth.login');
     }
 }
