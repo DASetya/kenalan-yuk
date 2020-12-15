@@ -19,15 +19,21 @@
 
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h4>Login</h4>
+                                <h4>Masuk</h4>
                             </div>
 
+                            @if($errors->any())
+                                <div class="alert alert-danger" role="alert">
+                                    <span class="font-weight-bold">{{$errors->first()}}</span>
+                                </div>
+                            @endif
+
                             <div class="card-body">
-                                <form method="POST" action="#">
+                                <form method="POST" action="{{ route('admin.login') }}">
+                                    {{ csrf_field() }}
                                     <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input id="username" type="text" class="form-control" name="username" required
-                                            autofocus>
+                                        <input id="username" type="text" class="form-control" name="username" required autofocus value="{{ old('username') }}">
                                     </div>
 
                                     <div class="form-group">
@@ -39,21 +45,19 @@
                                                 </a>
                                             </div> --}}
                                         </div>
-                                        <input id="password" type="password" class="form-control" name="password"
-                                            required>
+                                        <input id="password" type="password" class="form-control" name="password" required>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" name="remember" class="custom-control-input"
-                                                id="remember-me">
+                                            <input type="checkbox" name="remember" class="custom-control-input" id="remember-me" {{ old('remember') ? 'checked':'' }}>
                                             <label class="custom-control-label" for="remember-me">Ingat Saya</label>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                            Login
+                                            Masuk
                                         </button>
                                     </div>
                                 </form>
