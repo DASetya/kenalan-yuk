@@ -17,16 +17,29 @@ class RedirectIfAuthenticated
      * @param  string|null  ...$guards
      * @return mixed
      */
-    public function handle(Request $request, Closure $next, ...$guards)
+    public function handle(Request $request, Closure $next, $guard = 'user')
     {
-        $guards = empty($guards) ? [null] : $guards;
-
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+        // Jika sudah login, harus diredirect
+        if (Auth::guard($guard)->check()) {
+            if ($guard == 'user') {
+                return redirect()->route('dashboard');
+            } else if ($guard == 'admin') {
+                return redirect()->route('admin.index');
             }
         }
 
+        // Jika belum login, lanjut
         return $next($request);
+
+        ## Ori Laravel
+        // $guards = empty($guards) ? [null] : $guards;
+
+        // foreach ($guards as $guard) {
+        //     if (Auth::guard($guard)->check()) {
+        //         return redirect(RouteServiceProvider::HOME);
+        //     }
+        // }
+
+        // return $next($request);
     }
 }
