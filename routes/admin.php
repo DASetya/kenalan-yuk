@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\Question\QuestionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,6 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard.index');
     })->name('index');
+
+    Route::resource('questions', QuestionController::class);
 });
