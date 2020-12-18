@@ -26,7 +26,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.questions.create');
     }
 
     /**
@@ -37,7 +37,25 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validasi input user
+        $request->validate([
+            'question' => ['required'],
+            'description' => ['required'],
+        ]);
+
+        $question = Question::create($request->all());
+
+        if (!$question) {
+            // Gagal simpan
+            return redirect()->back()->withInput()->withErrors([
+                'message' => 'Gagal menyimpan, silahkan hubungi developer'
+            ]);
+        }
+
+        return redirect()->route('admin.questions.index')->with([
+            'status' => 'success',
+            'message' => 'Data berhasil ditambahkan'
+        ]);
     }
 
     /**

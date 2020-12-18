@@ -7,7 +7,9 @@
             <div class="section-header">
                 <h1>Pertanyaan</h1>
                 <div class="section-header-breadcrumb">
-                    <div class="breadcrumb-item active"><a href="#">Pertanyaan</a></div>
+                    <div class="breadcrumb-item active">
+                        <a href="{{ route('admin.questions.index') }}">Pertanyaan</a>
+                    </div>
                     <div class="breadcrumb-item">List Pertanyaan</a></div>
                 </div>
             </div>
@@ -22,7 +24,7 @@
                             </p>
                         </div>
                         <div class="col">
-                            <a href="#" class="btn btn-info float-right">Tambah</a>
+                            <a href="{{ route('admin.questions.create') }}" class="btn btn-info float-right">Tambah <i class="fas fa-plus"></i></a>
                         </div>
                     </div>
                 </div>
@@ -30,10 +32,15 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            {{-- <div class="card-header">
-                                <h4>Advanced Table</h4>
-                            </div> --}}
+                            <div class="card-header">
+                                <h4>Data Pertanyaan</h4>
+                            </div>
                             <div class="card-body">
+                                @if(session()->has('status'))
+                                    <div class="alert alert-{{ session()->get('status') }}" role="alert">
+                                        <span class="font-weight-bold">{{ session()->get('message') }}</span>
+                                    </div>
+                                @endif
                                 <div class="table-responsive">
                                     <table class="table table-striped" id="table-2">
                                         <thead>
