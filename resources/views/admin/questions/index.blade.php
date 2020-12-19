@@ -70,8 +70,12 @@
                                                         <span class="font-weight-bold">Deskripsi:</span> {{ $question->description }}
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('admin.questions.edit', $question->id) }}" class="btn btn-warning">Edit</a>
-                                                        <a href="#" class="btn btn-danger">Hapus</a>
+                                                        <a href="{{ route('admin.questions.edit', $question->id) }}" class="btn btn-warning mr-2">Edit <i class="fas fa-edit"></i></a>
+                                                        <form class="d-inline" action="{{ route('admin.questions.destroy', $question->id) }}" method="post">
+                                                            {{ method_field('DELETE') }}
+                                                            {{ csrf_field() }}
+                                                            <button class="btn btn-danger" type="submit">Hapus <i class="fas fa-times"></i></button>
+                                                        </form>
                                                     </td>
                                                 </tr>
                                             @endforeach

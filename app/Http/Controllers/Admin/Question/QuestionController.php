@@ -113,11 +113,21 @@ class QuestionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Question $question
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Question $question)
     {
-        //
+        if (!$question->delete()) {
+            // Gagal menghapus
+            return redirect()->back()->withInput()->withErrors([
+                'message' => 'Gagal menghapus, silahkan hubungi developer'
+            ]);
+        }
+
+        return redirect()->route('admin.questions.index')->with([
+            'status' => 'success',
+            'message' => 'Data berhasil dihapus'
+        ]);
     }
 }
