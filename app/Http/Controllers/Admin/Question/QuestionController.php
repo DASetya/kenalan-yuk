@@ -72,24 +72,42 @@ class QuestionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Question $question
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Question $question)
     {
-        //
+        return view('admin.questions.edit', ['question' => $question]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Question $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Question $question)
     {
-        //
+        // Validasi input user
+        $request->validate([
+            'question' => ['required'],
+            'description' => ['required'],
+        ]);
+
+        $update = $question->update($request->all());
+
+        if (!$update) {
+            // Gagal simpan
+            return redirect()->back()->withInput()->withErrors([
+                'message' => 'Gagal menyimpan, silahkan hubungi developer'
+            ]);
+        }
+
+        return redirect()->route('admin.questions.index')->with([
+            'status' => 'success',
+            'message' => 'Data berhasil diubah'
+        ]);
     }
 
     /**

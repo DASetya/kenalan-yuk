@@ -70,7 +70,7 @@
                                                         <span class="font-weight-bold">Deskripsi:</span> {{ $question->description }}
                                                     </td>
                                                     <td>
-                                                        <a href="#" class="btn btn-warning">Edit</a>
+                                                        <a href="{{ route('admin.questions.edit', $question->id) }}" class="btn btn-warning">Edit</a>
                                                         <a href="#" class="btn btn-danger">Hapus</a>
                                                     </td>
                                                 </tr>
