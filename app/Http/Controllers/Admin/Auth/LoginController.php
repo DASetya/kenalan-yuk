@@ -32,4 +32,10 @@ class LoginController extends Controller
             return redirect()->back()->withInput()->withErrors(['message' => 'Username atau Password Anda salah']);
         }
     }
+
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect()->route('admin.login');
+    }
 }

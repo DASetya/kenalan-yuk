@@ -13,3 +13,4 @@
 <script src="{{ asset('stisla/js/custom.js') }}"></script>
 
 <!-- Page Specific JS File -->
+@yield('scripts')
