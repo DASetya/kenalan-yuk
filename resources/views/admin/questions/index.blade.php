@@ -64,7 +64,7 @@
                                                     </td>
                                                     <td>
                                                         <span class="font-weight-bold">Pertanyaan:</span> {{ $question->question }} <br>
-                                                        <span class="font-weight-bold">Deskripsi:</span> {{ $question->description }}
+                                                        <span class="font-weight-bold">Deskripsi:</span> {{ strip_tags($question->description) }}
                                                     </td>
                                                     <td>
                                                         <a href="{{ route('admin.questions.edit', $question->id) }}" class="btn btn-warning mr-2">Edit <i class="fas fa-edit"></i></a>
