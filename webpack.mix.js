@@ -11,7 +11,13 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix
+    // Bagian admin
+    .js('resources/js/admin/app.js', 'public/js/admin')
+    .sass('resources/sass/admin/app.scss', 'public/css/admin')
+
+    // Bagian website
+    .js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),

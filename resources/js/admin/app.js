@@ -1,0 +1,6 @@
+window.$ = window.jQuery = require('jquery')
+require('popper.js')
+require('bootstrap')
+require('jquery.nicescroll')
+require('moment')
+require('summernote')

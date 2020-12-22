@@ -1,5 +1,9 @@
 @extends('admin.layout')
 
+@section('scripts')
+    <script src="{{ asset('stisla/js/page/modules-datatables.js') }}"></script>
+@stop
+
 @section('content')
     <!-- Main Content -->
     <div class="main-content">
@@ -46,24 +50,17 @@
                                         <thead>
                                             <tr>
                                                 <th class="text-center">
-                                                    <div class="custom-checkbox custom-control">
-                                                        <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad" class="custom-control-input" id="checkbox-all">
-                                                        <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
-                                                    </div>
+                                                    No
                                                 </th>
                                                 <th>Informasi</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($questions as $question)
+                                            @foreach($questions as $key => $question)
                                                 <tr>
                                                     <td class="text-center">
-                                                        <div class="custom-checkbox custom-control">
-                                                            <input type="checkbox" data-checkboxes="mygroup"
-                                                                class="custom-control-input" id="checkbox-1">
-                                                            <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
-                                                        </div>
+                                                        {{ $key+1 }}
                                                     </td>
                                                     <td>
                                                         <span class="font-weight-bold">Pertanyaan:</span> {{ $question->question }} <br>
