@@ -46,7 +46,7 @@
                                     </div>
                                 @endif
                                 <div class="table-responsive">
-                                    <table class="table table-striped" id="table-2">
+                                    <table class="table table-striped" id="table-0">
                                         <thead>
                                             <tr>
                                                 <th class="text-center">
