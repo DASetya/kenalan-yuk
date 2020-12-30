@@ -23,12 +23,11 @@ class Authenticate
             return $next($request);
         }
 
-        if ($guard == 'web') {
-            return redirect()->route('login');
-        } else if ($guard == 'admin') {
+        if ($guard == 'admin') {
             return redirect()->route('admin.login');
         }
 
+        return redirect()->route('login');
     }
 
     ## Bawaan Laravel ###
