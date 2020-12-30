@@ -17,11 +17,11 @@ class RedirectIfAuthenticated
      * @param  string|null  ...$guards
      * @return mixed
      */
-    public function handle(Request $request, Closure $next, $guard = 'user')
+    public function handle(Request $request, Closure $next, $guard = 'web')
     {
         // Jika sudah login, harus diredirect
         if (Auth::guard($guard)->check()) {
-            if ($guard == 'user') {
+            if ($guard == 'web') {
                 return redirect()->route('dashboard');
             } else if ($guard == 'admin') {
                 return redirect()->route('admin.index');
