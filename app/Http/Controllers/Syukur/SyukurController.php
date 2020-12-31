@@ -9,6 +9,6 @@ class SyukurController extends Controller
 {
     public function index()
     {
-        return 'ini halaman syukur oioio';
+        return view('syukur.index');
     }
 }
