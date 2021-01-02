@@ -22,4 +22,5 @@ mix
         require('postcss-import'),
         require('tailwindcss'),
     ])
+    .sass('resources/sass/app.scss', 'public/css/addon.css')
     .webpackConfig(require('./webpack.config'));

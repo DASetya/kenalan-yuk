@@ -86052,15 +86052,27 @@ __webpack_require__(/*! datatables.net-responsive-bs4 */ "./node_modules/datatab
 
 /***/ }),
 
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*************************************************************************************************!*\
-  !*** multi ./resources/js/admin/app.js ./resources/sass/admin/app.scss ./resources/css/app.css ***!
-  \*************************************************************************************************/
+/*!***************************************************************************************************************************!*\
+  !*** multi ./resources/js/admin/app.js ./resources/sass/admin/app.scss ./resources/sass/app.scss ./resources/css/app.css ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/fattach/Projects/Web/kenalan-yuk/resources/js/admin/app.js */"./resources/js/admin/app.js");
 __webpack_require__(/*! /home/fattach/Projects/Web/kenalan-yuk/resources/sass/admin/app.scss */"./resources/sass/admin/app.scss");
+__webpack_require__(/*! /home/fattach/Projects/Web/kenalan-yuk/resources/sass/app.scss */"./resources/sass/app.scss");
 module.exports = __webpack_require__(/*! /home/fattach/Projects/Web/kenalan-yuk/resources/css/app.css */"./resources/css/app.css");
 
 
