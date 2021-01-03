@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Syukur\SyukurController;
+use App\Http\Livewire\Syukur\Index as SyukurIndex;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::group(['namespace' => 'Syukur', 'prefix' => 'syukur', 'as' => 'syukur.'], function () {
-        Route::get('/', [SyukurController::class, 'index'])->name('index');
+    Route::group(['prefix' => 'syukur', 'as' => 'syukur.'], function () {
+        Route::get('/', SyukurIndex::class)->name('index');
     });
 });

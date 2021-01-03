@@ -57,4 +57,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function syukurs()
+    {
+        return $this->hasMany(Syukur::class);
+    }
 }
