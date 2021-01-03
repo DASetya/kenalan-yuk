@@ -10,6 +10,15 @@ Project PKL dengan judul kenalan yuk
 6. buat db di local
 7. setting .env sesuai local masing"
 8. jalankan php artisan key:generate
-9. akses webnya, selesai
+9. jalankan php artisan migrate:fresh --seed
+10. akses webnya, selesai
 
 Note : bisa pake perintah php artisan serve kalo pingin pake web servernya laravel sendiri
+
+# akun default
+1. Halaman /admin-panel
+    username: admin
+    password: pastibisa
+2. Halaman /login
+    email: user@mail.com
+    password: pastibisa
