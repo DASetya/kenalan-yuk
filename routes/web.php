@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Syukur\SyukurController;
 use App\Http\Livewire\Syukur\Index as SyukurIndex;
+use App\Http\Livewire\Mood\Index as MoodIndex;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::group(['prefix' => 'syukur', 'as' => 'syukur.'], function () {
         Route::get('/', SyukurIndex::class)->name('index');
+    });
+
+    Route::group(['prefix' => 'mood', 'as' => 'mood.'], function () {
+        Route::get('/', MoodIndex::class)->name('index');
     });
 });
