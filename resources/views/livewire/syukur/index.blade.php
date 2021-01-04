@@ -74,6 +74,7 @@
                 </div>
                 <livewire:syukur.edit :syukurId="$syukur->id" :key="'listSyukur-' . $syukur->id"/>
             @endforeach
+            {{ $syukurs->links() }}
         </div>
     </div>
 </div>

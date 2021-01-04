@@ -6,10 +6,11 @@ use Livewire\Component;
 use App\Models\Syukur;
 use Illuminate\Support\Facades\Auth;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, WithPagination;
 
     protected $listeners = [
         'needRefresh' => '$refresh'
@@ -22,7 +23,7 @@ class Index extends Component
 
     public function render()
     {
-        $syukurs = Syukur::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
+        $syukurs = Syukur::where('user_id', auth()->id())->orderBy('created_at', 'desc')->paginate(5);
         return view('livewire.syukur.index', compact('syukurs'));
     }
 
