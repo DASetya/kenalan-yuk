@@ -10,6 +10,11 @@ use Livewire\WithFileUploads;
 class Index extends Component
 {
     use WithFileUploads;
+
+    protected $listeners = [
+        'syukurUpdated' => '$refresh'
+    ];
+
     public $showModalAddSyukur = false;
     public $story;
     public $image;
