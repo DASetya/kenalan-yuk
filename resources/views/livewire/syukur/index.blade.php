@@ -17,7 +17,7 @@
                     <button wire:click="$toggle('showModalAddSyukur')" class="button button-primary float-right mr-3">Tambah <i class="fas fa-plus"></i></button>
 
                     <x-jet-modal :id="'modalAddSyukur'" :maxWidth="500" wire:model="showModalAddSyukur">
-                        <form wire:submit.prevent="submitSyukur">
+                        <form wire:submit.prevent="store">
                             <div class="px-6 py-4">
                                 <div class="text-lg text-bold">
                                     Tambah Gratitude Journal

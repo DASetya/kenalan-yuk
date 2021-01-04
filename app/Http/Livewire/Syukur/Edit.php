@@ -43,7 +43,7 @@ class Edit extends Component
         }
     }
 
-    public function updateSyukur(Syukur $syukur)
+    public function update(Syukur $syukur)
     {
         // Validasi input
         $this->validate([
@@ -64,10 +64,21 @@ class Edit extends Component
         $syukur->story = $this->story;
 
         if ($syukur->save()) {
-            unset($this->story);
-            unset($this->image);
             $this->showModalEditSyukur = false;
-            $this->emitTo('syukur.index', 'syukurUpdated');
+            $this->emitTo('syukur.index', 'needRefresh');
+        }
+    }
+
+    public function delete(Syukur $syukur)
+    {
+        // Hapus gambar yg lama
+        if (Storage::exists($syukur->image)) {
+            Storage::delete($syukur->image);
+        }
+
+        if ($syukur->delete()) {
+            $this->showModalEditSyukur = false;
+            $this->emitTo('syukur.index', 'needRefresh');
         }
     }
 }

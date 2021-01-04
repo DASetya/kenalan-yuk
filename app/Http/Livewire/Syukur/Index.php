@@ -12,7 +12,7 @@ class Index extends Component
     use WithFileUploads;
 
     protected $listeners = [
-        'syukurUpdated' => '$refresh'
+        'needRefresh' => '$refresh'
     ];
 
     public $showModalAddSyukur = false;
@@ -34,18 +34,21 @@ class Index extends Component
         $this->currentImage = $this->image->temporaryUrl();
     }
 
-    public function submitSyukur()
+    public function store()
     {
         $this->validate([
             'story' => 'required|string',
-            'image' => 'image|max:1024', // 1MB Max
+            'image' => 'nullable|image|max:1024', // 1MB Max
         ]);
 
-        $path = $this->image->store('syukur');
+        // Upload gambar
+        if ($this->image) {
+            $path = $this->image->store('syukur');
+        }
 
         $submit = Auth::user()->syukurs()->create([
             'story' => $this->story,
-            'image' => $path,
+            'image' => $path ?? null,
         ]);
 
         if ($submit) {

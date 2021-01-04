@@ -12,6 +12,9 @@
 .button:focus {
     @apply outline-none;
 }
+button i {
+    margin-left: 5px;
+}
 
 /* Specific Button Section */
 .button-primary {
@@ -26,4 +29,11 @@
 }
 .button-success:hover {
     @apply bg-green-800;
+}
+
+.button-danger {
+    @apply bg-red-600 text-white;
+}
+.button-danger:hover {
+    @apply bg-red-700;
 }

@@ -1,9 +1,9 @@
 <div>
     <x-jet-modal :maxWidth="500" wire:model="showModalEditSyukur">
-        <form wire:submit.prevent="updateSyukur({{ $syukurId }})">
+        <form wire:submit.prevent="update({{ $syukurId }})">
             <div class="px-6 py-4">
                 <div class="text-lg text-bold">
-                    Edit Gratitude Journal
+                    Detail Gratitude Journal
                 </div>
         
                 <div class="mt-4">
@@ -34,9 +34,21 @@
                 </div>
             </div>
         
-            <div class="px-6 py-4 bg-gray-100 text-right">
-                <button type="submit" class="button button-success mr-3">Update <i class="fas fa-plus"></i></button>
-                <button wire:click="$toggle('showModalEditSyukur')" class="button" type="button">Tutup <i class="fas fa-times"></i></button>
+            <div class="grid grid-cols-2 px-6 py-4 bg-gray-100">
+                <div>
+                    <button 
+                        onclick="return confirm('Apakah Anda yakin ?') || event.stopImmediatePropagation()"
+                        wire:click="delete({{ $syukurId }})"
+                        type="button" 
+                        class="button button-danger mr-3"
+                    >
+                        Hapus <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="button button-success mr-3">Update <i class="fas fa-pen"></i></button>
+                    <button wire:click="$toggle('showModalEditSyukur')" class="button" type="button">Tutup <i class="fas fa-times"></i></button>
+                </div>
             </div>
         </form>
     </x-jet-modal>
