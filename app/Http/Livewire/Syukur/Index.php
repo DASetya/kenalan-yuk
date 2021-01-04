@@ -18,11 +18,20 @@ class Index extends Component
     public $showModalAddSyukur = false;
     public $story;
     public $image;
+    public $currentImage = 'image/placeholder.png';
 
     public function render()
     {
         $syukurs = Syukur::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
         return view('livewire.syukur.index', compact('syukurs'));
+    }
+
+    public function updatedImage()
+    {
+        $this->validate([
+            'image' => 'image|max:1024', // 1MB Max
+        ]);
+        $this->currentImage = $this->image->temporaryUrl();
     }
 
     public function submitSyukur()

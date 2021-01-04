@@ -25,30 +25,16 @@
                         
                                 <div class="mt-4">
                                     <div class="grid">
-                                        <div x-data="{photoName: null, photoPreview: null}" class="mx-auto">
+                                        <div class="mx-auto">
                                             <!-- Profile Photo File Input -->
                                             <input type="file" class="hidden" name="image"
                                                         x-ref="photo"
                                                         wire:model="image"
-                                                        x-on:change="
-                                                                photoName = $refs.photo.files[0].name;
-                                                                const reader = new FileReader();
-                                                                reader.onload = (e) => {
-                                                                    photoPreview = e.target.result;
-                                                                };
-                                                                reader.readAsDataURL($refs.photo.files[0]);
-                                                        " />
+                                            />
                             
                                             <!-- Current Profile Photo -->
-                                            <div class="grid mt-2" x-show="!photoPreview">
-                                                <img src="{{ asset('image/placeholder.png') }}" class="rounded-full h-20 w-20 object-cover mx-auto">
-                                            </div>
-                            
-                                            <!-- New Profile Photo Preview -->
-                                            <div class="grid mt-2" x-show="photoPreview">
-                                                <span class="mx-auto block rounded-full w-20 h-20"
-                                                      x-bind:style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'">
-                                                </span>
+                                            <div class="grid mt-2">
+                                                <img src="{{ $currentImage }}" class="rounded-full h-20 w-20 object-cover mx-auto">
                                             </div>
                                             
                                             <div class="grid mt-2 mb-5">
