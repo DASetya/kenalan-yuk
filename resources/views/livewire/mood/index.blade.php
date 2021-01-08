@@ -4,5 +4,11 @@
             Mood
         </h2>
     </x-slot>
-    <h1>ini halaman mood</h1>
+
+    <div class="py-12">
+        <div class="container mx-auto sm:px-6 lg:px-8">
+            <livewire:mood.create-mood />
+            <livewire:mood.list-mood />
+        </div>
+    </div>
 </div>
