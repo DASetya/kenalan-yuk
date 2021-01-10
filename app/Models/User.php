@@ -62,4 +62,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Syukur::class);
     }
+
+    public function moods()
+    {
+        return $this->hasMany(Mood::class);
+    }
 }

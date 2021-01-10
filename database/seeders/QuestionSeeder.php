@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Question;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 
 class QuestionSeeder extends Seeder
 {
@@ -20,7 +21,9 @@ class QuestionSeeder extends Seeder
         for ($i=0; $i<5; $i++) {
             $questions[] = [
                 'question' => 'pertanyaan ke-'.($i+1),
-                'description' => 'deskripsi pertanyaan ke-'.($i+1)
+                'description' => 'deskripsi pertanyaan ke-'.($i+1),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ];
         }
 

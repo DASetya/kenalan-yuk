@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Mood extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'question_id',
+        'score',
+    ];
 }
