@@ -3,7 +3,7 @@
         <form wire:submit.prevent="update({{ $myStoryId }})">
             <div class="px-6 py-4">
                 <div class="text-lg text-bold">
-                    Detail Gratitude Journal
+                    Detail Kisahku
                 </div>
         
                 <div class="mt-4">
