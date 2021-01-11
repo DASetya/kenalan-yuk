@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Syukur\SyukurController;
 use App\Http\Livewire\Syukur\Index as SyukurIndex;
 use App\Http\Livewire\Mood\Index as MoodIndex;
+use App\Http\Livewire\MyStory\Index as MyStoryIndex;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +34,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     });
 
     Route::group(['prefix' => 'my-story', 'as' => 'my-story.'], function () {
-        Route::get('/', MoodIndex::class)->name('index');
+        Route::get('/', MyStoryIndex::class)->name('index');
     });
 });

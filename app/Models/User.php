@@ -67,4 +67,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Mood::class);
     }
+
+    public function myStories()
+    {
+        return $this->hasMany(MyStory::class);
+    }
 }

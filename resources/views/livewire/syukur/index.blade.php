@@ -45,7 +45,7 @@
                                             </div>
                                         </div>
                                         
-                                        <textarea wire:model="story" rows="5" placeholder="Ada apa dengan hari ini ?" class="border p-3 shadow-sm w-2/3 mx-auto"></textarea>
+                                        <textarea wire:model="story" rows="5" placeholder="Ada apa dengan hari ini ?" class="border p-3 shadow-sm w-2/3 mx-auto rounded-lg"></textarea>
                                         <x-jet-input-error for="story" class="mx-auto" />
                                     </div>
                                 </div>
