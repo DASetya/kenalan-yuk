@@ -57,18 +57,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($questions as $key => $question)
+                                            @foreach($data as $key => $datum)
                                                 <tr>
                                                     <td class="text-center">
                                                         {{ $key+1 }}
                                                     </td>
                                                     <td>
-                                                        <span class="font-weight-bold">Pertanyaan:</span> {{ $question->question }} <br>
-                                                        <span class="font-weight-bold">Deskripsi:</span> {{ strip_tags($question->description) }}
+                                                        <span class="font-weight-bold">Pertanyaan:</span> {{ $datum->question }} <br>
+                                                        <span class="font-weight-bold">Deskripsi:</span> {{ strip_tags($datum->description) }}
                                                     </td>
                                                     <td>
-                                                        <a href="{{ route('admin.questions.edit', $question->id) }}" class="btn btn-warning mr-2">Edit <i class="fas fa-edit"></i></a>
-                                                        <form class="d-inline" action="{{ route('admin.questions.destroy', $question->id) }}" method="post">
+                                                        <a href="{{ route('admin.questions.edit', $datum->id) }}" class="btn btn-warning mr-2">Edit <i class="fas fa-edit"></i></a>
+                                                        <form class="d-inline" action="{{ route('admin.questions.destroy', $datum->id) }}" method="post">
                                                             {{ method_field('DELETE') }}
                                                             {{ csrf_field() }}
                                                             <button class="btn btn-danger" type="submit">Hapus <i class="fas fa-times"></i></button>

@@ -30,19 +30,19 @@
                                         <span class="font-weight-bold">{{$errors->first()}}</span>
                                     </div>
                                 @endif
-                                <form action="{{ route('admin.questions.update', $question->id) }}" method="post">
+                                <form action="{{ route('admin.questions.update', $datum->id) }}" method="post">
                                     {{ method_field('PUT') }}
                                     {{ csrf_field() }}
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pertanyaan</label>
                                         <div class="col-sm-12 col-md-7">
-                                            <input name="question" type="text" class="form-control" required value="{{ $question->question }}">
+                                            <input name="question" type="text" class="form-control" required value="{{ $datum->question }}">
                                         </div>
                                     </div>
                                     <div class="form-group row mb-4">
                                         <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Deskripsi Detail</label>
                                         <div class="col-sm-12 col-md-7">
-                                            <textarea name="description" class="summernote-simple" required>{{ $question->description }}</textarea>
+                                            <textarea name="description" class="summernote-simple" required>{{ $datum->description }}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row mb-4">
