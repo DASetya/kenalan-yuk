@@ -32,4 +32,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::group(['prefix' => 'mood', 'as' => 'mood.'], function () {
         Route::get('/', MoodIndex::class)->name('index');
     });
+
+    Route::group(['prefix' => 'my-story', 'as' => 'my-story.'], function () {
+        Route::get('/', MoodIndex::class)->name('index');
+    });
 });

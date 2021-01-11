@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             QuestionSeeder::class,
             SyukurSeeder::class,
+            MyStoryCategorySeeder::class,
         ]);
     }
 }

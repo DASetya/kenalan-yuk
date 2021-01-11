@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\Question\QuestionController;
+use App\Http\Controllers\Admin\MyStoryCategory\MyStoryCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,5 @@ Route::middleware('auth:admin')->group(function () {
     })->name('index');
 
     Route::resource('questions', QuestionController::class);
+    Route::resource('my-story-categories', MyStoryCategoryController::class);
 });

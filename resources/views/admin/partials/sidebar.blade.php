@@ -21,10 +21,17 @@
                 Data Master
             </li>
 
-            <li class="active">
-            <a class="nav-link" href="{{ route('admin.questions.index') }}">
+            <li class="{{ (request()->routeIs('admin.questions.*')) ? 'active':'' }}">
+                <a class="nav-link" href="{{ route('admin.questions.index') }}">
                     <i class="far fa-square"></i>
                     <span>Pertanyaan</span>
+                </a>
+            </li>
+
+            <li class="{{ (request()->routeIs('admin.my-story-categories.*')) ? 'active':'' }}">
+                <a class="nav-link" href="{{ route('admin.my-story-categories.index') }}">
+                    <i class="far fa-square"></i>
+                    <span>Kategori Kisahku</span>
                 </a>
             </li>
 

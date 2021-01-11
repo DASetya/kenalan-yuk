@@ -21,8 +21,8 @@
                     <x-jet-nav-link href="{{ route('mood.index') }}" :active="request()->routeIs('mood.index')">
                         Mood
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('mood.index') }}" :active="request()->routeIs('mood.index')">
-                        Bukuku
+                    <x-jet-nav-link href="{{ route('my-story.index') }}" :active="request()->routeIs('my-story.index')">
+                        Kisahku
                     </x-jet-nav-link>
                 </div>
             </div>
