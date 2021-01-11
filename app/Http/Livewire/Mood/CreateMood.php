@@ -3,15 +3,14 @@
 namespace App\Http\Livewire\Mood;
 
 use Livewire\Component;
-use Livewire\WithPagination;
 use App\Models\Mood;
 use App\Models\Question;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class CreateMood extends Component
 {
-    use WithPagination;
-
     public $showModalAddMood = false;
     public $data;
     public $moods = [];
@@ -31,11 +30,17 @@ class CreateMood extends Component
     {
         $min = $this->data->count();
         $data = [];
+        $today = Carbon::now()->format('Y-m-d H:i:s');
 
         $this->validate([
             'moods.pertanyaan' => "required|array|min:$min",
             'moods.pertanyaan.*' => 'required|integer|min:1|max:6',
         ]);
+
+        if (Auth::user()->moods()->where(DB::raw('Date(created_at)', '=', DB::raw("Date($today)")))->first()) {
+            // data sudah ada
+            return;
+        }
 
         foreach ($this->moods['pertanyaan'] as $index => $pertanyaan) {
             $data[] = [

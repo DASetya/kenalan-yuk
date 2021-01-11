@@ -1,5 +1,8 @@
 <div>
-    @foreach($data as $datum)
+    {{ $debug }} <br>
+    {{ $data }}
+
+    {{-- @foreach($data as $datum)
         <div
             wire:click="$emitTo('syukur.edit', 'showModal', {{ $datum->id }})" 
             class="bg-white cursor-pointer grid grid-cols-3 gap-5 overflow-hidden shadow-md sm:rounded-lg my-5 p-3"
@@ -12,6 +15,5 @@
             </div>
         </div>
         <livewire:syukur.edit :syukurId="$datum->id" :key="'listSyukur-' . $datum->id"/>
-    @endforeach
-    {{ $data->links() }}
+    @endforeach --}}
 </div>
