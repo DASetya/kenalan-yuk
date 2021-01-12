@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Psychologist;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Psychologist;
+use Illuminate\Support\Facades\Storage;
 
 class PsychologistController extends Controller
 {
@@ -37,13 +38,21 @@ class PsychologistController extends Controller
      */
     public function store(Request $request)
     {
+        $image = [];
         // Validasi input user
         $request->validate([
-            'question' => ['required'],
+            'name' => ['required'],
             'description' => ['required'],
+            'gmap' => ['required'],
+            'image' => ['image', 'max:2048'] // Max 2MB
         ]);
 
-        $question = Psychologist::create($request->all());
+        // Upload gambar
+        if ($request->hasFile('image')) {
+            $image['image'] = $request->image->store('psychologist');
+        }
+
+        $question = Psychologist::create($request->except('image') + $image);
 
         if (!$question) {
             // Gagal simpan
@@ -89,13 +98,25 @@ class PsychologistController extends Controller
      */
     public function update(Request $request, Psychologist $psychologist)
     {
+        $image = [];
         // Validasi input user
         $request->validate([
-            'question' => ['required'],
+            'name' => ['required'],
             'description' => ['required'],
+            'gmap' => ['required'],
+            'image' => ['image', 'max:2048'] // Max 2MB
         ]);
 
-        $update = $psychologist->update($request->all());
+        // Upload gambar
+        if ($request->hasFile('image')) {
+            $image['image'] = $request->image->store('psychologist');
+            // Hapus gambar yg lama
+            if (Storage::exists($psychologist->image)) {
+                Storage::delete($psychologist->image);
+            }
+        }
+
+        $update = $psychologist->update($request->except('image') + $image);
 
         if (!$update) {
             // Gagal simpan
@@ -118,6 +139,11 @@ class PsychologistController extends Controller
      */
     public function destroy(Psychologist $psychologist)
     {
+        // Hapus gambar yg lama
+        if (Storage::exists($psychologist->image)) {
+            Storage::delete($psychologist->image);
+        }
+        
         if (!$psychologist->delete()) {
             // Gagal menghapus
             return redirect()->back()->withInput()->withErrors([

@@ -35,6 +35,13 @@
                 </a>
             </li>
 
+            <li class="{{ (request()->routeIs('admin.psychologists.*')) ? 'active':'' }}">
+                <a class="nav-link" href="{{ route('admin.psychologists.index') }}">
+                    <i class="far fa-square"></i>
+                    <span>Psikolog</span>
+                </a>
+            </li>
+
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown">
                     <i class="fas fa-th"></i>
