@@ -2,6 +2,11 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Gmap Section */
+iframe {
+    height: 200px;
+}
+
 /* Button Section */
 .button {
     @apply inline-block px-6 py-2 text-xs font-bold leading-6 text-center transition rounded-full shadow;

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Syukur\Index as SyukurIndex;
 use App\Http\Livewire\Mood\Index as MoodIndex;
 use App\Http\Livewire\MyStory\Index as MyStoryIndex;
+use App\Http\Livewire\Psychologist\Index as PsychologistIndex;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::group(['prefix' => 'my-story', 'as' => 'my-story.'], function () {
         Route::get('/', MyStoryIndex::class)->name('index');
+    });
+
+    Route::group(['prefix' => 'psychologist', 'as' => 'psychologist.'], function () {
+        Route::get('/', PsychologistIndex::class)->name('index');
     });
 });

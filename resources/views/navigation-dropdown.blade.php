@@ -15,14 +15,21 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
+
                     <x-jet-nav-link href="{{ route('syukur.index') }}" :active="request()->routeIs('syukur.index')">
                         Syukur
                     </x-jet-nav-link>
+
                     <x-jet-nav-link href="{{ route('mood.index') }}" :active="request()->routeIs('mood.index')">
                         Mood
                     </x-jet-nav-link>
+
                     <x-jet-nav-link href="{{ route('my-story.index') }}" :active="request()->routeIs('my-story.index')">
                         Kisahku
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('psychologist.index') }}" :active="request()->routeIs('psychologist.index')">
+                        Psikolog
                     </x-jet-nav-link>
                 </div>
             </div>
