@@ -20,11 +20,11 @@
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" defer></script>
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-primary-gradient">
             @livewire('navigation-dropdown')
 
             <!-- Page Heading -->
-            <header class="bg-white shadow">
+            <header class="header bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
@@ -37,23 +37,23 @@
 
             <footer class="hidden xs:flex fixed min-w-full bottom-0 footer">
                 <div class="my-4">
-                    <a href="#" class="px-4 align-middle">
+                    <a href="{{ route('dashboard') }}" class="px-4 align-middle">
                         <i class="fas fa-home"></i>
                     </a>
 
-                    <a href="#" class="px-4 align-middle">
+                    <a href="{{ route('syukur.index') }}" class="px-4 align-middle">
                         <i class="fas fa-praying-hands"></i>
                     </a>
 
-                    <a href="#" class="px-4 align-middle">
+                    <a href="{{ route('mood.index') }}" class="px-4 align-middle">
                         <i class="fas fa-grin"></i>
                     </a>
 
-                    <a href="#" class="px-4 align-middle">
+                    <a href="{{ route('my-story.index') }}" class="px-4 align-middle">
                         <i class="fas fa-book"></i>
                     </a>
 
-                    <a href="#" class="px-4 align-middle">
+                    <a href="{{ route('psychologist.index') }}" class="px-4 align-middle">
                         <i class="fas fa-user"></i>
                     </a>
                 </div>

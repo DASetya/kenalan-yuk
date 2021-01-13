@@ -43165,7 +43165,25 @@ video {
           animation: bounce 1s infinite;
 }
 
+.bg-primary-gradient {
+  background: linear-gradient(-38deg, #45aaf2, white);
+}
+
+:root {
+  --primarycolor: #45AAF2;
+}
+
 /* Header Footer Section */
+
+.header {
+  background-color: var(--primarycolor);
+  border-radius: 0 0 0 52px;
+  box-shadow: -5px 7px 20px #00000030;
+  color: white;
+  font-size: 35px;
+  font-family: montserrat;
+  padding-left: 50px;
+}
 
 .footer {
   overflow-x: scroll;

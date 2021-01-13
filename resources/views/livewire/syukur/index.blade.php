@@ -1,7 +1,8 @@
 <div>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="font-semibold leading-tight">
             Syukur
+            <a href="#" class="text-2xl"><i class="far fa-question-circle"></i></a>
         </h2>
     </x-slot>
 
@@ -13,7 +14,6 @@
                 </div>
                 
                 <div>
-                    <a href="#" class="button button-primary float-right"><i class="fas fa-question"></i></a>
                     <button wire:click="$toggle('showModalAddSyukur')" class="button button-primary float-right mr-3">Tambah <i class="fas fa-plus"></i></button>
 
                     <x-jet-modal :id="'modalAddSyukur'" :maxWidth="500" wire:model="showModalAddSyukur">
