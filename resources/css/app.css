@@ -2,6 +2,20 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Header Footer Section */
+.footer {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background-color: white;
+    border-radius: 0 52px 0px 0px;
+    box-shadow: 7px -3px 20px #00000025;
+    color: var(--primarycolor);
+    font-size: 25px;
+    font-family: montserrat;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 /* Gmap Section */
 iframe {
     height: 200px;

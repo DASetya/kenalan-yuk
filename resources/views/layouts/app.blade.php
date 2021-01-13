@@ -31,9 +31,33 @@
             </header>
 
             <!-- Page Content -->
-            <main>
+            <main class="pb-8">
                 {{ $slot }}
             </main>
+
+            <footer class="hidden xs:flex fixed min-w-full bottom-0 footer">
+                <div class="my-4">
+                    <a href="#" class="px-4 align-middle">
+                        <i class="fas fa-home"></i>
+                    </a>
+
+                    <a href="#" class="px-4 align-middle">
+                        <i class="fas fa-praying-hands"></i>
+                    </a>
+
+                    <a href="#" class="px-4 align-middle">
+                        <i class="fas fa-grin"></i>
+                    </a>
+
+                    <a href="#" class="px-4 align-middle">
+                        <i class="fas fa-book"></i>
+                    </a>
+
+                    <a href="#" class="px-4 align-middle">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </div>
+            </footer>
         </div>
 
         @stack('modals')

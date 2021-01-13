@@ -13,6 +13,9 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
+        screens: {
+            'xs': {'max': '575px'}
+        }
     },
 
     variants: {
