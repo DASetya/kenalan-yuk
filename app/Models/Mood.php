@@ -13,4 +13,9 @@ class Mood extends Model
         'question_id',
         'score',
     ];
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
+    }
 }

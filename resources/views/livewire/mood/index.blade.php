@@ -9,7 +9,7 @@
                 label: 'Tingkat Kebahagiaan',
                 data: {{ json_encode($data) }},
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(69, 170, 242, 0.2)',
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
@@ -33,7 +33,7 @@
 <div>
     <x-slot name="header">
         <h2 class="font-semibold leading-tight">
-            Mood {{ json_encode($labels) }}
+            Mood
             <a href="#" class="text-2xl"><i class="far fa-question-circle"></i></a>
         </h2>
     </x-slot>
@@ -42,7 +42,7 @@
         <div class="container mx-auto sm:px-6 lg:px-8">
             <livewire:mood.create-mood />
             
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <canvas id="myChart" width="400" height="250"></canvas>
         </div>
     </div>
 </div>

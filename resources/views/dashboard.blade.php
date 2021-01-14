@@ -9,7 +9,8 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white rounded-2xl text-center py-4 my-5 overflow-hidden shadow-xl sm:rounded-lg">
                 <h3 class="mb-4">Progress Kisahku</h3>
-                <img src="{{ asset('image/placeholder.png') }}" style="width: 100px; height: 100px;" class="object-cover mx-auto mb-3" alt="persen">
+                <span class="text-primary mb-3 block">0%</span>
+                {{-- <img src="{{ asset('image/placeholder.png') }}" style="width: 100px; height: 100px;" class="object-cover mx-auto mb-3" alt="persen"> --}}
                 <a class="button button-light">
                     Lanjutkan Pengisian 
                     <i class="fas fa-angle-double-right ml-5"></i>

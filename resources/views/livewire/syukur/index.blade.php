@@ -10,12 +10,13 @@
         <div class="container mx-auto sm:px-6 lg:px-8">
             <div class="bg-white rounded-2xl grid grid-cols-3 gap-5 overflow-hidden shadow-md sm:rounded-lg my-5 p-3">
                 <div class="col-start-2 text-center my-auto">
-                    <span class="font-bold">Gratitude Journal</span>
+                    <h2 class="text-primary font-bold">
+                        Syukur
+                        <button wire:click="$toggle('showModalAddSyukur')" class="float-right"><i class="fas fa-plus"></i></button>
+                    </h2>
                 </div>
                 
                 <div>
-                    <button wire:click="$toggle('showModalAddSyukur')" class="button button-primary float-right mr-3">Tambah <i class="fas fa-plus"></i></button>
-
                     <x-jet-modal :id="'modalAddSyukur'" :maxWidth="500" wire:model="showModalAddSyukur">
                         <form wire:submit.prevent="store">
                             <div class="px-6 py-4">

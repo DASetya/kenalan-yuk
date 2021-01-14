@@ -10,7 +10,7 @@
         <div class="container mx-auto sm:px-6 lg:px-8">
             <div class="bg-white rounded-2xl grid grid-cols-3 gap-5 overflow-hidden shadow-md sm:rounded-lg my-5 p-3">
                 <div class="col-start-2 text-center my-auto">
-                    <span class="font-bold">Psikolog Di Sekitar</span>
+                    <h2 class="text-primary font-bold">Psikolog Di Sekitar</h2>
                 </div>
             </div>
             @foreach($data as $datum)

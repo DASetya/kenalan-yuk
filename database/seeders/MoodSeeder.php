@@ -26,7 +26,7 @@ class MoodSeeder extends Seeder
                 $moods[] = [
                     'user_id' => $userId,
                     'question_id' => $question->id,
-                    'score' => 6,
+                    'score' => rand(1, 6),
                     'created_at' => Carbon::create('2021-01-'. sprintf("%02d", $i) .'06:18:22'),
                     'updated_at' => Carbon::create('2021-01-'. sprintf("%02d", $i) .'06:18:22'),
                 ];
