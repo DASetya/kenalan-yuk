@@ -18,7 +18,8 @@ use App\Http\Livewire\Psychologist\Index as PsychologistIndex;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dashboard');
+    // return view('welcome');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
