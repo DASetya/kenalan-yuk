@@ -9,13 +9,13 @@ module.exports = {
 
     theme: {
         extend: {
+            screens: {
+                'xs': {'max': '575px'}
+            },
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
-        screens: {
-            'xs': {'max': '575px'}
-        }
     },
 
     variants: {
