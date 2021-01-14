@@ -26,7 +26,7 @@ class LoginController extends Controller
 
         if (Auth::guard('admin')->attempt(['username' => $request->username, 'password' => $request->password], $rememberMe)) {
             // Sukses login
-            return redirect()->route('admin.index');
+            return redirect()->route('admin.questions.index');
         } else {
             // Gagal login
             return redirect()->back()->withInput()->withErrors(['message' => 'Username atau Password Anda salah']);

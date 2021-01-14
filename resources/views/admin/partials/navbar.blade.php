@@ -7,11 +7,11 @@
                     <i class="fas fa-bars"></i>
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none">
                     <i class="fas fa-search"></i>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </form>
     <ul class="navbar-nav navbar-right">
@@ -147,7 +147,7 @@
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ auth()->guard('admin')->user()->name }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a href="#" class="dropdown-item has-icon">
+                {{-- <a href="#" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
                 </a>
                 <a href="#" class="dropdown-item has-icon">
@@ -156,7 +156,7 @@
                 <a href="#" class="dropdown-item has-icon">
                     <i class="fas fa-cog"></i> Settings
                 </a>
-                <div class="dropdown-divider"></div>
+                <div class="dropdown-divider"></div> --}}
                 <a href="{{ route('admin.logout') }}" class="dropdown-item has-icon text-danger">
                     <i class="fas fa-sign-out-alt"></i> Logout
                 </a>

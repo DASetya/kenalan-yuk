@@ -29,7 +29,8 @@ Route::namespace('Auth')->group(function() {
 
 Route::middleware('auth:admin')->group(function () {
     Route::get('/', function () {
-        return view('admin.dashboard.index');
+        // return view('admin.dashboard.index');
+        return redirect()->route('admin.questions.index');
     })->name('index');
 
     Route::resource('questions', QuestionController::class);
