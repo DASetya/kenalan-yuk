@@ -25,6 +25,7 @@
     "dependencies": {
         "@aacassandra/jquery_upload_preview": "0.0.1",
         "@fortawesome/fontawesome-free": "^5.15.1",
+        "apexcharts": "^3.23.1",
         "bootstrap": "^4.5.3",
         "chart.js": "^2.9.4",
         "datatables": "^1.10.18",
