@@ -16,7 +16,7 @@ class PsychologistController extends Controller
      */
     public function index()
     {
-        $data = Psychologist::orderBy('name', 'asc')->paginate(10);
+        $data = Psychologist::orderBy('name', 'asc')->get();
         return view('admin.psychologist.index', compact('data'));
     }
 

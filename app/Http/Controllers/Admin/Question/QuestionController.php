@@ -15,7 +15,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $data = Question::orderBy('question', 'asc')->paginate(10);
+        $data = Question::orderBy('question', 'asc')->get();
         return view('admin.questions.index', compact('data'));
     }
 

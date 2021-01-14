@@ -15,7 +15,7 @@ class MyStoryCategoryController extends Controller
      */
     public function index()
     {
-        $data = MyStoryCategory::orderBy('name', 'asc')->paginate(10);
+        $data = MyStoryCategory::orderBy('name', 'asc')->get();
         return view('admin.my-story-category.index', compact('data'));
     }
 
