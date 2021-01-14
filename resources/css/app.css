@@ -9,6 +9,17 @@
     --primarycolor: #45AAF2;
 }
 
+h3 {
+    color: var(--primarycolor);
+    font-size: 18px;
+    font-family: montserrat;
+    @apply font-bold;
+}
+
+.text-primary {
+    color: var(--primarycolor);
+}
+
 /* Header Footer Section */
 .header {
     background-color: var(--primarycolor);
@@ -40,7 +51,7 @@ iframe {
 
 /* Button Section */
 .button {
-    @apply inline-block px-6 py-2 text-xs font-bold leading-6 text-center transition rounded-full shadow;
+    @apply inline-block px-6 py-2 text-xs font-bold leading-6 text-center transition rounded-full shadow cursor-pointer;
 }
 .button:hover {
     @apply shadow-lg;
@@ -72,4 +83,14 @@ button i {
 }
 .button-danger:hover {
     @apply bg-red-700;
+}
+
+.button-light {
+    font-weight: 700;
+    color: var(--primarycolor);
+    @apply bg-white;
+}
+.button-light:hover {
+    background-color: var(--primarycolor);
+    @apply text-white;
 }

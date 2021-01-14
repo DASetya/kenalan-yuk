@@ -1,14 +1,42 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold leading-tight">
-            {{ __('Dashboard') }}
+            Hi, {{ auth()->user()->name }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white rounded-2xl overflow-hidden shadow-xl sm:rounded-lg">
-                <x-jet-welcome />
+            <div class="bg-white rounded-2xl text-center py-4 my-5 overflow-hidden shadow-xl sm:rounded-lg">
+                <h3 class="mb-4">Progress Kisahku</h3>
+                <img src="{{ asset('image/placeholder.png') }}" style="width: 100px; height: 100px;" class="object-cover mx-auto mb-3" alt="persen">
+                <a class="button button-light">
+                    Lanjutkan Pengisian 
+                    <i class="fas fa-angle-double-right ml-5"></i>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-2xl text-center py-4 my-5 overflow-hidden shadow-xl sm:rounded-lg">
+                <h3 class="mb-4">Kebahagiaan</h3>
+                <p class="text-primary font-semibold">
+                    Sepertinya kamu lupa mengisi tingkat kebahagiaanmu pada hari ini!
+                </p>
+                <p class="text-primary">
+                    Beri tahu kami sekarang yuk tingkat kebahagiaan kamu hari ini!
+                </p>
+                <a class="button button-light">
+                    Lanjutkan Pengisian 
+                    <i class="fas fa-angle-double-right ml-5"></i>
+                </a>
+            </div>
+
+            <div class="bg-white rounded-2xl text-center py-4 my-5 overflow-hidden shadow-xl sm:rounded-lg">
+                <h3 class="mb-4">Syukur</h3>
+                <p class="text-primary">Kamu belum mengisi rasa syukur pada hari ini!</p>
+                <a class="button button-light">
+                    Lanjutkan Pengisian 
+                    <i class="fas fa-angle-double-right ml-5"></i>
+                </a>
             </div>
         </div>
     </div>
