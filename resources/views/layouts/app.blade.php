@@ -31,7 +31,7 @@
             </header>
 
             <!-- Page Content -->
-            <main class="pb-8">
+            <main class="pb-8 px-4 rounded-lg">
                 {{ $slot }}
             </main>
 

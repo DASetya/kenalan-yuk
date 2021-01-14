@@ -2,6 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold leading-tight">
             Kisahku
+            <a href="#" class="text-2xl"><i class="far fa-question-circle"></i></a>
         </h2>
     </x-slot>
 

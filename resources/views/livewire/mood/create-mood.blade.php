@@ -1,10 +1,9 @@
-<div class="bg-white grid grid-cols-3 gap-5 overflow-hidden shadow-md sm:rounded-lg my-5 p-3">
+<div class="bg-white rounded-2xl grid grid-cols-3 gap-5 overflow-hidden shadow-md sm:rounded-lg my-5 p-3">
     <div class="col-start-2 text-center my-auto">
         <span class="font-bold">Tingkat Kebahagiaan</span>
     </div>
     
     <div>
-        <a href="#" class="button button-primary float-right"><i class="fas fa-question"></i></a>
         <button wire:click="$toggle('showModalAddMood')" class="button button-primary float-right mr-3">Tambah <i class="fas fa-plus"></i></button>
 
         <x-jet-modal :id="'modalAddMood'" wire:model="showModalAddMood">
