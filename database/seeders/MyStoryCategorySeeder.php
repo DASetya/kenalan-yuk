@@ -21,11 +21,43 @@ class MyStoryCategorySeeder extends Seeder
 
         // Prepare data dummy syukur
         for ($i=1; $i<=5; $i++) {
-            $categories[] = [
-                'name' => 'Kategori ke-'.$i,
-                'description' => $faker->text,
-                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+            $categories = [
+                [
+                    'name' => 'Ceritakan diri kamu.',
+                    'description' => $faker->text,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name' => 'Bagaimana orang lain kamu?',
+                    'description' => $faker->text,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name' => 'Bagaimana teman-temanmu memandang Kamu?',
+                    'description' => $faker->text,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name' => 'Bagaimana mahasiswa lain memandang Kamu?',
+                    'description' => $faker->text,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name' => 'Bagaimana dosen memandang Kamu?',
+                    'description' => $faker->text,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
+                [
+                    'name' => 'Perkenalkan anggota keluargamu dan seberapa dekat dengan anggota keluargamu?',
+                    'description' => $faker->text,
+                    'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                ],
             ];
         }
 
