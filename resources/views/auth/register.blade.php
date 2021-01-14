@@ -31,11 +31,11 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    Sudah punya akun ?, Masuk
                 </a>
 
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
+                <x-jet-button class="button button-light ml-4">
+                    Daftar
                 </x-jet-button>
             </div>
         </form>
