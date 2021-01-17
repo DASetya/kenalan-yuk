@@ -83,10 +83,13 @@ iframe {
 .button {
     @apply inline-block px-6 py-2 text-xs font-bold leading-6 text-center transition rounded-full shadow cursor-pointer;
 }
-.button:hover {
+.button-plain {
+    @apply inline-block px-6 py-2 leading-6 text-center transition rounded-full cursor-pointer;
+}
+.button:hover, .button-plain:hover {
     @apply shadow-lg;
 }
-.button:focus {
+.button:focus, .button-plain:hover {
     @apply outline-none;
 }
 button i {
@@ -95,10 +98,12 @@ button i {
 
 /* Specific Button Section */
 .button-primary {
-    @apply bg-blue-700 text-white;
+    background-color: var(--primarycolor);
+    @apply text-white;
 }
 .button-primary:hover {
-    @apply bg-blue-800;
+    color: var(--primarycolor);
+    @apply bg-white;
 }
 
 .button-success {
