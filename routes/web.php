@@ -5,6 +5,7 @@ use App\Http\Livewire\Syukur\Index as SyukurIndex;
 use App\Http\Livewire\Mood\Index as MoodIndex;
 use App\Http\Livewire\MyStory\Index as MyStoryIndex;
 use App\Http\Livewire\Psychologist\Index as PsychologistIndex;
+use App\Http\Livewire\Auth\Index as AuthIndexMine;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,12 @@ use App\Http\Livewire\Psychologist\Index as PsychologistIndex;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('dashboard');
-    // return view('welcome');
-})->name('index');
+// Route::get('/', function () {
+//     return redirect()->route('dashboard');
+//     // return view('welcome');
+// })->name('index');
+
+Route::get('/', AuthIndexMine::class)->name('index');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
