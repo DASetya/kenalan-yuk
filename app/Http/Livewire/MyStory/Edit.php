@@ -5,6 +5,8 @@ namespace App\Http\Livewire\MyStory;
 use App\Models\MyStory;
 use Livewire\Component;
 use App\Models\MyStoryCategory;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class Edit extends Component
 {
@@ -41,6 +43,9 @@ class Edit extends Component
         // Validasi input
         $this->validate([
             'category' => 'required|exists:my_story_categories,id',
+            'category' => Rule::unique('my_stories', 'my_story_category_id')->ignore($MyStory)->where(function ($query) {
+                return $query->where('user_id', Auth::id());
+            }),
             'story' => 'required',
         ]);
 
